@@ -1,0 +1,12 @@
+#PBS -N parsa
+#PBS -q teachingq
+#PBS -l select=1:ncpus=2:mpiprocs=2
+#PBS -l walltime=00:02:00
+#PBS -o log.out
+#PBS -e log.err
+
+
+
+cd $PBS_O_WORKDIR
+module load gcc
+g++ main.cpp -o test -lm && ./test
